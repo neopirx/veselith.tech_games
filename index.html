@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1c36d4">
+<meta name="description" content="Veselith — released games and games in development.">
+<title>Veselith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Doto:wght@700;900&family=Geist+Mono:wght@400;600&family=Jacquard+24&family=Unbounded:wght@300;600;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/knight.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="track">
+  <span class="snap" id="archive"></span>
+  <span class="snap" id="forge"></span>
+
+  <div class="stage">
+
+    <!-- ░░ backgrounds ░░ -->
+    <div class="bg-black">
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="hole" aria-hidden="true"></div>
+    </div>
+    <div class="bg-blue" aria-hidden="true"></div>
+
+    <!-- ░░ ACT I · ARCHIVE ░░ -->
+    <h1 class="mark" aria-label="Veselith">
+      <svg class="swash" viewBox="0 0 1600 360" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M40 250 C 40 80, 300 60, 520 180 S 1000 330, 1150 170 S 1560 60, 1560 230 S 1240 340, 1080 220 S 560 40, 330 170 S 60 330, 40 250Z"/>
+      </svg>
+      <span class="mark-letters" aria-hidden="true"></span>
+    </h1>
+
+    <div class="hud-strip act1" aria-hidden="true">
+      <div class="hs-box">
+        <b class="inv">ARCHIVE</b>
+        <svg class="squig" viewBox="0 0 120 24"><path d="M2 18 C 12 2, 22 2, 28 12 S 40 22, 48 8 L 56 8 L 60 18 L 70 4 C 80 2, 86 20, 96 14 S 110 4, 118 10"/></svg>
+        <span class="tiny">VSL · <span class="yr"></span></span>
+      </div>
+      <svg class="orbit" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><ellipse cx="20" cy="20" rx="17" ry="7" transform="rotate(-30 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="7" transform="rotate(30 20 20)"/></svg>
+      <span class="checker"></span>
+      <div class="hs-col"><span class="tiny">↖↖</span><span class="barcode sm" data-bars="24"></span><span class="tiny">INTERNAL</span></div>
+      <div class="hs-col grow"><span class="tiny">✦ F3</span><span class="tiny dim">LIB.INDEX</span></div>
+      <div class="hs-col"><span class="tiny">RELEASED</span><span class="tiny dim" id="count-lib">00</span></div>
+      <div class="hs-col"><span class="tiny">FORGING</span><span class="tiny dim" id="count-forge">00</span></div>
+      <svg class="stack" viewBox="0 0 60 30"><ellipse cx="30" cy="8" rx="28" ry="5"/><ellipse cx="30" cy="15" rx="28" ry="5"/><ellipse cx="30" cy="22" rx="28" ry="5"/></svg>
+      <div class="hs-box wide"><span class="barcode" data-bars="64"></span><span class="tiny r">VSL-ARC ◌ <span class="mo"></span></span></div>
+    </div>
+
+    <div class="side-line l act1" aria-hidden="true"><i class="spark"></i><span></span></div>
+    <div class="side-line r act1" aria-hidden="true"><span></span><i class="spark"></i></div>
+
+    <!-- the figure -->
+    <div class="knight" aria-hidden="true">
+      <div class="kn-glitch"></div>
+      <img src="assets/knight.webp" alt="" class="kn-main" draggable="false">
+      <img src="assets/knight.webp" alt="" class="kn-ghost g1" draggable="false">
+      <img src="assets/knight.webp" alt="" class="kn-ghost g2" draggable="false">
+      <span class="scanbar"></span>
+    </div>
+
+    <canvas id="globe" aria-hidden="true"></canvas>
+
+    <section class="act act-one" aria-labelledby="lib-h">
+      <h2 id="lib-h" class="sr">Released games</h2>
+      <div class="lib" id="lib"></div>
+      <div class="lib-index" aria-hidden="true">
+        <span class="doto big" id="lib-n">01</span>
+        <span class="tiny">ARCHIVE<br>N° OF RELEASED WORKS</span>
+      </div>
+    </section>
+
+    <!-- ░░ ACT II · FORGE ░░ -->
+    <section class="act act-two" aria-labelledby="dev-h">
+      <h2 id="dev-h" class="sr">Games in development</h2>
+
+      <svg class="frame" aria-hidden="true">
+        <line class="fl v" x1="58%" y1="0" x2="58%" y2="100%"/>
+        <line class="fl h" x1="0" y1="21%" x2="92%" y2="21%"/>
+        <line class="fl h" x1="0" y1="64%" x2="92%" y2="64%"/>
+      </svg>
+      <i class="star s1" aria-hidden="true"></i>
+      <i class="star s2" aria-hidden="true"></i>
+      <span class="doto num n3" aria-hidden="true">03</span>
+      <span class="doto num n2" aria-hidden="true">02</span>
+
+      <div class="f-head" aria-hidden="true">
+        <span class="tiny">WORKS NOT YET RELEASED</span>
+        <div class="f-head-row"><span class="checker"></span><span class="barcode" data-bars="40"></span></div>
+        <span class="tiny dim">VSL-FRG <span class="code"></span></span>
+      </div>
+      <p class="f-sub tiny" aria-hidden="true">// FORGE ACTIVE<br>BUILD IN PROGRESS</p>
+
+      <div class="forge" id="forge-list"></div>
+
+      <div class="f-box" aria-hidden="true">
+        <span class="f-arrow">↘</span>
+        <div class="f-xs"><i></i><i></i><span class="tiny">VSL<br>.TECH</span></div>
+      </div>
+
+      <div class="lantern" aria-hidden="true"><i></i><i></i></div>
+    </section>
+
+    <!-- ░░ chrome ░░ -->
+    <header class="top">
+      <span class="logo" aria-hidden="true">◐</span>
+      <span class="tiny" id="top-l">VESELITH</span>
+      <span class="tiny dim" id="top-c"></span>
+      <span class="tiny" id="top-r"></span>
+    </header>
+
+    <nav class="pager" aria-label="Sections">
+      <button data-go="archive" class="on"><span class="doto">01</span><span class="tiny">ARCHIVE</span></button>
+      <button data-go="forge"><span class="doto">02</span><span class="tiny">FORGE</span></button>
+    </nav>
+
+    <div class="cue act1" aria-hidden="true"><span class="tiny">SCROLL</span><i></i></div>
+
+    <div class="slices" aria-hidden="true"></div>
+  </div>
+</main>
+
+<div class="cursor" aria-hidden="true"><i></i><span class="tiny" id="cur-xy"></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<script src="main.js"></script>
+</body>
+</html>

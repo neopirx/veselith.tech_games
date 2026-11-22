@@ -1,0 +1,8 @@
+# references are third-party images — not ours to publish
+reference/
+# old iterations and the unused original fonts
+_previous/
+fonts/
+# raw source of the cut-out knight
+assets/knight-source.jpg
+.DS_Store
